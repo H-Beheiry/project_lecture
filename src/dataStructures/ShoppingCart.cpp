@@ -82,7 +82,7 @@ void ShoppingCart::displayNode(CARTproduct* node)
 
 void ShoppingCart::displayCart()
 {
-    if (isEmpty)
+    if (isEmpty())
     {
         cout<<RED<<"cannot display an empty cart"<<RESET<<endl;
     }

@@ -75,3 +75,5 @@ void productTable::updateProduct(int id, double newPrice, int newQuantity)
     }
     cout<<RED<<"Update failed: Product ID: "<<id<<" not found."<<RESET<<endl;
 }
+
+productTable::~productTable(){}

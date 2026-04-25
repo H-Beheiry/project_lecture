@@ -1,11 +1,13 @@
 #ifndef CUSTOMER_H
 #define CUSTOMER_H
-#include "..\actors\customerUser.h"
-struct customer
-{
+
+class customerUser;
+
+struct customer {
     customerUser* user;
-    customer *next;
-    customer(customerUser* user);
+    customer* next;
+    
+    customer(customerUser* u); 
 };
 
 #endif

@@ -158,7 +158,7 @@ void SortedProducts::displayNode(BSTproduct* node)
 
 void SortedProducts::displayProducts(BSTproduct* tree_root)
 {
-    if (root==NULL)
+    if (tree_root==NULL)
     {
         return;
     }
@@ -169,3 +169,5 @@ void SortedProducts::displayProducts(BSTproduct* tree_root)
         displayProducts(tree_root->rchild);
     }
 }
+
+SortedProducts::~SortedProducts() {}

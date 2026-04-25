@@ -3,7 +3,8 @@
 #include "..\dataStructures\ShoppingCart.h"
 #include "..\dataStructures\ProductTable.h"
 #include "..\dataStructures\SortedProducts.h"
-#include "..\dataStructures\customerLine.h"
+
+class CustomerLine;
 class customerUser
 {
     public:

@@ -1,5 +1,6 @@
 #include "..\..\include\actors\customerUser.h"
 #include "..\..\include\systemUtils\ConsoleUtils.h"
+#include "..\..\include\dataStructures\CustomerLine.h"
 
 customerUser::customerUser(string uname, string pass, int id, productTable* catalog, SortedProducts* tree, CustomerLine* line)
 {
@@ -21,7 +22,7 @@ void customerUser::browseItems()
 void customerUser::addTocart(int productID, int quantity)
 {
     product* product_added= product_catalog->search(productID);
-    if (product_added!= NULL && product_added->quantity<=quantity)
+    if (product_added!= NULL && product_added->quantity>=quantity)
     {
         customer_cart->addItem(product_added,quantity);
         cout<<GREEN<<"Product added to cart successfully"<<RESET<<endl;
