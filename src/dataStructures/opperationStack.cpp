@@ -29,4 +29,16 @@ void opperationStack::clear()
     }
 }
 
+void opperationStack::peek()
+{
+    if (top!=NULL)
+    {
+        cout<<top->opp<<endl;
+    }
+    else
+    {
+        cout<<RED<<"no opperations availble"<<RESET<<endl;
+    }
+}
+
 opperationStack::~opperationStack(){clear();}

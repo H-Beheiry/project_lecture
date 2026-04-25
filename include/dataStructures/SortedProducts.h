@@ -12,6 +12,7 @@ class SortedProducts
     public:
         BSTproduct* root;
         void insert(product* new_node);
+        void remove(int id);
         void search(int id);
         void displayProducts(BSTproduct* tree_root);
 

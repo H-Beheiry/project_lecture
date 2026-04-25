@@ -54,6 +54,65 @@ void SortedProducts::insert(product* p)
     }
 }
 
+void SortedProducts::remove(int id)
+{
+    BSTproduct* curr  = root;
+    BSTproduct* parent= NULL;
+    BSTproduct* child = NULL;
+    while(curr!= NULL && curr->data->productID!= id)
+    {
+        parent= curr;
+        if (id < curr->data->productID)
+        {
+            curr= curr->lchild;
+        }
+        else
+        {
+            curr= curr->rchild;
+        }
+    }
+    if (curr==NULL)
+    {
+        return;
+    }
+    if (curr->lchild!=NULL && curr->rchild!=NULL)
+    {
+        child = curr->rchild;
+        parent= curr;
+        while (child->lchild!=NULL)
+        {
+            parent= child;
+            child = child->lchild;
+        }
+        curr->data= child->data;
+        curr= child;
+    }
+
+    BSTproduct* son;
+    if (curr->lchild!=NULL)
+    {
+        son= curr->lchild;
+    }
+    else
+    {
+        son= curr->rchild;
+    }
+
+    if (parent==NULL)
+    {
+        root= son;
+    } 
+    else if (parent->lchild==curr)
+    {
+        parent->lchild= son;
+    }
+    else
+    {
+        parent->rchild= son;
+    }
+
+    delete curr;
+}
 
 void SortedProducts::search(int id)
 {

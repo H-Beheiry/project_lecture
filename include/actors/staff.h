@@ -9,7 +9,7 @@ class staff
     public:
         void updateItem(int id, double newPrice, int newQuantity);
         void addItemToRestock(int productID);
-        void removeItemFromRestock();
+        void removeItemFromRestock(int new_quntity);
         void displayItemsToRestock();
         void dequeCustomer();
         staff(int id, string pass, string uname, productTable* product_hashmap, CustomerLine* checkout_queue, RestockingSystem* restock_queue);

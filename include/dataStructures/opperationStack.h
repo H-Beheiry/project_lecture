@@ -15,6 +15,7 @@ class opperationStack
         opperation* pop();
         bool isEmpty() {return top==nullptr;}
         void clear();
+        void peek();
 };
 
 #endif

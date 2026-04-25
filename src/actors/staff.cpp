@@ -22,6 +22,7 @@ void staff::addItemToRestock(int productID)
     if (item!=NULL)
     {
         restcok_system->enqueue(item);
+        cout<<GREEN<<"Item added successfully !"<<RESET<<endl;
     }
 }
 
@@ -64,6 +65,10 @@ void staff::dequeCustomer()
         {
             cout<<YELLOW<<"Warning: "<<curr->data->name<<" is running low."<<RESET<<endl;
             restcok_system->enqueue(curr->data);
+        }
+        else if (!product_catalog->search(curr->data->productID))
+        {
+            cout<<RED<<"Item "<<curr->data->name<<" is no longer sold here. Removing from total."<<RESET<<endl;
         }
         curr= curr->next;
     }
