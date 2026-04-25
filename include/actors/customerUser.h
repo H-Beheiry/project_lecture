@@ -10,7 +10,8 @@ class customerUser
         customerUser(string uname, string pass, int id, productTable* catalog, SortedProducts* tree, CustomerLine* line);
         string getUsername(){return username;}
         string getPassword(){return password;}
-        
+        void setStatus(string s) {status=s;};
+        ShoppingCart* customer_cart;
         void browseItems();
         void addTocart(int productID, int quantity);
         void removeFromCart(int productID);
@@ -21,7 +22,6 @@ class customerUser
         SortedProducts* product_tree;
         CustomerLine* checkoutLine;
         
-        ShoppingCart* customer_cart;
         string username;
         string password;
         string status;

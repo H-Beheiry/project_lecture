@@ -17,6 +17,7 @@ class ShoppingCart
         void addItem(product* p, int q);
         void removeItem(int ID);
         void displayCart();
+        CARTproduct* getHead() {return head;}
 };
 
 #endif
