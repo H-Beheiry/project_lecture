@@ -56,7 +56,7 @@ void RestockingSystem::displayRestockQueue()
         RESTOCKproduct *curr= front;
         while (curr!=NULL)
         {
-            cout<<BLUE<<"Product ID: "<<curr->data->productID<<" Product Quantity: "<<curr->data->quantity<<" -->"<<RESET;
+            cout<<WHITE<<"Product ID: "<<curr->data->productID<<" Product Quantity: "<<curr->data->quantity<<endl<<" -->"<<endl<<RESET;
             curr= curr->next;
         }
         cout<<GREEN<<"NO MORE PRODUCTS NEED TO BE RESTOCKED"<<RESET<<endl;

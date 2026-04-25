@@ -21,6 +21,7 @@ void ShoppingCart::addItem(product* p, int q)
         new_node->next= head;
         head= new_node;
     }
+    size++;
 }
 
 void ShoppingCart::removeItem(int ID)
