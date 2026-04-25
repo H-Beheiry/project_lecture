@@ -20,6 +20,7 @@ class RestockingSystem
         void displayRestockQueue();
         bool isEmpty() {return size==0;}
         int  getSize() {return size;}
+        RESTOCKproduct* getFront() {return front;}
 };
 
 #endif

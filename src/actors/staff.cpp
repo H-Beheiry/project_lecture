@@ -25,9 +25,18 @@ void staff::addItemToRestock(int productID)
     }
 }
 
-void staff::removeItemFromRestock()
+void staff::removeItemFromRestock(int new_quantity)
 {
+    RESTOCKproduct* item_restocked= restcok_system->getFront();
+    if (item_restocked!=NULL)
+    {
+    item_restocked->data->quantity= new_quantity;
     restcok_system->dequeue();
+    }
+    else
+    {
+        cout<<RED<<"No items for restock....."<<RESET<<endl;
+    }
 }
 
 void staff::displayItemsToRestock()
@@ -58,7 +67,7 @@ void staff::dequeCustomer()
         }
         curr= curr->next;
     }
-    first_customer->user->setStatus("Completed");
+    first_customer->user->setStatus("BROWSING");
     checkout_line->dequeue();
     cout<<GREEN<<"Checkout completed for "<<first_customer->user->getUsername()<<RESET<<endl;
     }
